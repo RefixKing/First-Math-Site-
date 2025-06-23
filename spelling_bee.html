@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Bee Challenge - Brainy Arcade Hub</title>
+    <link rel="stylesheet" href="spelling_bee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">🔤 Spelling Bee Challenge</h1>
+        <p class="game-description">Listen, spell, and master words! Audio-based game with hints.</p>
+
+        <div id="start-screen" class="game-screen active">
+            <h2 class="screen-title">Choose Difficulty</h2>
+            <div class="difficulty-options">
+                <button class="difficulty-button" data-difficulty="easy">Easy</button>
+                <button class="difficulty-button" data-difficulty="medium">Medium</button>
+                <button class="difficulty-button" data-difficulty="hard">Hard</button>
+            </div>
+            <p class="high-score">High Score: <span id="high-score-easy">0</span> (Easy)</p>
+            <p class="high-score">High Score: <span id="high-score-medium">0</span> (Medium)</p>
+            <p class="high-score">High Score: <span id="high-score-hard">0</span> (Hard)</p>
+            <a href="index.html" class="back-to-hub">← Back to Hub</a>
+        </div>
+
+        <div id="game-screen" class="game-screen">
+            <div class="game-header">
+                <div class="game-stat">
+                    <span>Time:</span> <span id="time">90</span>s
+                </div>
+                <div class="game-stat">
+                    <span>Score:</span> <span id="score">0</span>
+                </div>
+                <div class="game-stat">
+                    <span>Streak:</span> <span id="streak">0</span>
+                </div>
+            </div>
+            <div class="problem-area">
+                <button id="speak-word-btn" class="speak-button">🔊 Speak Word</button>
+                <input type="text" id="answer-input" class="answer-input" placeholder="Type the word here" autofocus>
+                <div class="hints-area">
+                    <button id="hint-letter-btn" class="hint-button" data-hint-type="letter">💡 Reveal Letter (<span id="hints-left-letter">3</span>)</button>
+                    <button id="hint-definition-btn" class="hint-button" data-hint-type="definition">📖 Definition (<span id="hints-left-definition">1</span>)</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            <button id="submit-btn" class="game-button">Submit</button>
+            <button id="next-btn" class="game-button hidden">Next Word</button>
+        </div>
+
+        <div id="end-screen" class="game-screen">
+            <h2 class="screen-title">Game Over!</h2>
+            <p class="final-score">Your Score: <span id="final-score">0</span></p>
+            <p class="new-high-score" id="new-high-score"></p>
+            <button id="restart-btn" class="game-button">Play Again</button>
+            <a href="index.html" class="back-to-hub">← Back to Hub</a>
+        </div>
+    </div>
+
+    <script src="spelling_bee.js"></script>
+</body>
+</html>

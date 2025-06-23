@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Blitz - Brainy Arcade Hub</title>
+    <link rel="stylesheet" href="arithmetic_blitz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">🧮 Arithmetic Blitz</h1>
+        <p class="game-description">Solve math problems in 60 seconds! Beat your high score.</p>
+
+        <div id="start-screen" class="game-screen active">
+            <h2 class="screen-title">Choose Difficulty</h2>
+            <div class="difficulty-options">
+                <button class="difficulty-button" data-difficulty="easy">Easy (Single Digits)</button>
+                <button class="difficulty-button" data-difficulty="medium">Medium (Double Digits)</button>
+            </div>
+            <p class="high-score">High Score: <span id="high-score-easy">0</span> (Easy)</p>
+            <p class="high-score">High Score: <span id="high-score-medium">0</span> (Medium)</p>
+            <a href="index.html" class="back-to-hub">← Back to Hub</a>
+        </div>
+
+        <div id="game-screen" class="game-screen">
+            <div class="game-header">
+                <div class="game-stat">
+                    <span>Time:</span> <span id="time">60</span>s
+                </div>
+                <div class="game-stat">
+                    <span>Score:</span> <span id="score">0</span>
+                </div>
+                <div class="game-stat">
+                    <span>Streak:</span> <span id="streak">0</span>
+                </div>
+            </div>
+            <div class="problem-area">
+                <p id="problem" class="problem-text">Loading...</p>
+                <input type="number" id="answer-input" class="answer-input" placeholder="Your Answer" autofocus>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            <button id="submit-btn" class="game-button">Submit</button>
+            <button id="next-btn" class="game-button hidden">Next Problem</button>
+        </div>
+
+        <div id="end-screen" class="game-screen">
+            <h2 class="screen-title">Game Over!</h2>
+            <p class="final-score">Your Score: <span id="final-score">0</span></p>
+            <p class="new-high-score" id="new-high-score"></p>
+            <button id="restart-btn" class="game-button">Play Again</button>
+            <a href="index.html" class="back-to-hub">← Back to Hub</a>
+        </div>
+    </div>
+
+    <script src="arithmetic_blitz.js"></script>
+</body>
+</html>

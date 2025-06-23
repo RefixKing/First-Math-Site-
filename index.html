@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainy Arcade Hub - Educational Games Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-text">🧠 Brainy Arcade Hub</h1>
+                <p class="logo-subtitle">Educational Games Collection</p>
+            </div>
+            <nav class="nav">
+                <a href="#games" class="nav-link">Games</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Learn Through Play</h2>
+                <p class="hero-subtitle">Discover our collection of engaging educational games designed to make learning fun and effective!</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Games Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free to Play</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Learning Fun</span>
+                    </div>
+                </div>
+                <a href="#games" class="cta-button">Start Playing Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="games-section">
+        <div class="container">
+            <h2 class="section-title">Our Educational Games</h2>
+            <p class="section-subtitle">Choose your learning adventure!</p>
+
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">🧮</div>
+                    <div class="game-content">
+                        <h3 class="game-title">Arithmetic Blitz</h3>
+                        <p class="game-description">Test your math skills in 60 seconds! Solve arithmetic problems as fast as you can with two difficulty levels.</p>
+                        <div class="game-features">
+                            <span class="feature-tag">Math</span>
+                            <span class="feature-tag">60 Seconds</span>
+                            <span class="feature-tag">2 Levels</span>
+                        </div>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">⏱️</span>
+                                <span class="stat-text">Quick Rounds</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">🏆</span>
+                                <span class="stat-text">High Scores</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">📱</span>
+                                <span class="stat-text">Mobile Ready</span>
+                            </div>
+                        </div>
+                        <div class="game-actions">
+                            <a href="arithmetic_blitz.html" class="play-button">Play Now</a>
+                            <button class="info-button" onclick="showGameInfo('arithmetic')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">🔤</div>
+                    <div class="game-content">
+                        <h3 class="game-title">Spelling Bee Challenge</h3>
+                        <p class="game-description">Listen, spell, and master words! Audio-based spelling game with three difficulty levels and helpful hints.</p>
+                        <div class="game-features">
+                            <span class="feature-tag">Spelling</span>
+                            <span class="feature-tag">Audio</span>
+                            <span class="feature-tag">3 Levels</span>
+                        </div>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🔊</span>
+                                <span class="stat-text">Audio Learning</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💡</span>
+                                <span class="stat-text">Helpful Hints</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">📚</span>
+                                <span class="stat-text">Vocabulary</span>
+                            </div>
+                        </div>
+                        <div class="game-actions">
+                            <a href="spelling_bee.html" class="play-button">Play Now</a>
+                            <button class="info-button" onclick="showGameInfo('spelling')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card coming-soon">
+                    <div class="game-icon">🚀</div>
+                    <div class="game-content">
+                        <h3 class="game-title">More Games Coming Soon!</h3>
+                        <p class="game-description">We're working on exciting new educational games. Stay tuned for updates!</p>
+                        <div class="game-features">
+                            <span class="feature-tag">Science</span>
+                            <span class="feature-tag">Geography</span>
+                            <span class="feature-tag">History</span>
+                        </div>
+                        <div class="coming-soon-content">
+                            <p class="coming-soon-text">🎯 Pattern Puzzler<br>🌍 Geography Quest<br>🔬 Science Lab</p>
+                        </div>
+                        <div class="game-actions">
+                            <button class="notify-button" onclick="showNotifyModal()">Notify Me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Brainy Arcade Hub</h2>
+                    <p class="about-description">
+                        Brainy Arcade Hub is a collection of educational games designed to make learning engaging and fun.
+                        Our games combine entertainment with education, helping students of all ages develop essential skills
+                        in math, language arts, and more.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎮</span>
+                            <div class="feature-content">
+                                <h4>Engaging Gameplay</h4>
+                                <p>Fun mechanics that keep learners motivated and engaged</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📚</span>
+                            <div class="feature-content">
+                                <h4>Educational Value</h4>
+                                <p>Curriculum-aligned content that reinforces key learning objectives</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📱</span>
+                            <div class="feature-content">
+                                <h4>Accessible Design</h4>
+                                <p>Works on all devices with responsive, user-friendly interfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <h3>Our Mission</h3>
+                        <p>To make learning accessible, engaging, and effective through innovative educational games.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="arithmetic-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('arithmetic-modal')">&times;</span>
+            <h3>🧮 Arithmetic Blitz</h3>
+            <div class="modal-body">
+                <p><strong>Challenge your math skills in this fast-paced arithmetic game!</strong></p>
+                <h4>How to Play:</h4>
+                <ul>
+                    <li>Choose between Easy (single digits) or Medium (double digits) difficulty</li>
+                    <li>Solve as many math problems as possible in 60 seconds</li>
+                    <li>Build streaks for bonus points</li>
+                    <li>Beat your high score!</li>
+                </ul>
+                <h4>Educational Benefits:</h4>
+                <ul>
+                    <li>Improves mental math calculation speed</li>
+                    <li>Reinforces basic arithmetic operations</li>
+                    <li>Develops time management skills</li>
+                    <li>Builds confidence in mathematics</li>
+                </ul>
+                <div class="modal-actions">
+                    <a href="arithmetic_blitz.html" class="play-button">Play Arithmetic Blitz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="spelling-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('spelling-modal')">&times;</span>
+            <h3>🔤 Spelling Bee Challenge</h3>
+            <div class="modal-body">
+                <p><strong>Master spelling through audio-based learning!</strong></p>
+                <h4>How to Play:</h4>
+                <ul>
+                    <li>Choose from Easy, Medium, or Hard difficulty levels</li>
+                    <li>Listen to word pronunciations using text-to-speech</li>
+                    <li>Type the correct spelling within 90 seconds</li>
+                    <li>Use helpful hints to guide your answers</li>
+                </ul>
+                <h4>Educational Benefits:</h4>
+                <ul>
+                    <li>Improves spelling accuracy and vocabulary</li>
+                    <li>Develops phonetic awareness</li>
+                    <li>Enhances listening skills</li>
+                    <li>Perfect for ESL learners</li>
+                </ul>
+                <div class="modal-actions">
+                    <a href="spelling_bee.html" class="play-button">Play Spelling Bee Challenge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notify-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('notify-modal')">&times;</span>
+            <h3>🚀 Stay Updated!</h3>
+            <div class="modal-body">
+                <p>Be the first to know when new educational games are released!</p>
+                <p>We're working on exciting new games including:</p>
+                <ul>
+                    <li><strong>Pattern Puzzler</strong> - Logic and pattern recognition</li>
+                    <li><strong>Geography Quest</strong> - World knowledge and map skills</li>
+                    <li><strong>Science Lab</strong> - Interactive science experiments</li>
+                </ul>
+                <p>Follow our progress and get notified when these games launch!</p>
+                <div class="notify-form">
+                    <input type="email" placeholder="Enter your email address" class="email-input">
+                    <button class="subscribe-button">Subscribe for Updates</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Brainy Arcade Hub</h4>
+                    <p>Educational games that make learning fun and effective.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Games</h4>
+                    <ul>
+                        <li><a href="arithmetic_blitz.html">Arithmetic Blitz</a></li>
+                        <li><a href="spelling_bee.html">Spelling Bee Challenge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#games">All Games</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Brainy Arcade Hub. Made with ❤️ for learners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
