@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us – YourSiteName</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden; /* Allow vertical scroll for content */
+        }
+
+        body {
+            background: linear-gradient(-45deg, #1a1a40, #004466, #330033, #004422);
+            background-size: 400% 400%;
+            animation: bgMove 20s ease infinite;
+            position: relative;
+            color: #fff;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-dot {
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.05);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .dots-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200vh;
+            animation: floatDots 30s linear infinite;
+            z-index: -1; /* Ensure it is behind content */
+        }
+
+        @keyframes floatDots {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+
+        .content-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+            width: 800px;
+            z-index: 10;
+            margin: 40px auto; /* Centering the box */
+        }
+
+        .content-box h1 {
+            color: #222;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content-box form { margin-top: 20px; }
+        .content-box label { display: block; margin-bottom: 6px; font-weight: bold; }
+        .content-box input, .content-box textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; }
+        .content-box button { background: #007bff; color: white; font-weight: bold; padding: 12px; width: 100%; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: background 0.3s ease; }
+        .content-box button:hover { background: #0056b3; }
+        .content-box .info { text-align: center; margin-top: 20px; color: #555; font-size: 0.9rem; }
+        .content-box a { color: #007bff; text-decoration: none; }
+        .content-box a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #ddd;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+        }
+        footer a {
+            color: #aaeaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="dots-container" id="dotsContainer"></div>
+
+    <div class="content-box">
+        <h1>Contact Us</h1>
+        <div style="position: relative; opacity: 0.3; pointer-events: none;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; background: rgba(255, 0, 0, 0.9); color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; text-align: center;">
+                ❌ MESSAGE SYSTEM BROKEN<br>SEND EMAIL INSTEAD
+            </div>
+            <form id="contactForm">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" type="text" required placeholder="John Doe">
+
+                <label for="email">Your Email</label>
+                <input id="email" name="email" type="email" required placeholder="john@example.com">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="info" style="margin-top: 30px; font-size: 1.1rem; font-weight: bold;">
+            📧 Email us directly at <span id="obfuscated-email"></span>
+        </div>
+    </div>
+
+    <script>
+        // Email obfuscation - protects from spam bots
+        const user = "refixfreebies";
+        const domain = "gmail.com";
+        const emailLink = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+        // Show email on page load
+        document.getElementById("obfuscated-email").innerHTML = emailLink;
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
+    <footer> 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Use</a> | 
+        <a href="contact.html">Contact</a> |
+        <a href="index.html">Home</a>
+    </footer>
+
+    <script>
+        const container = document.getElementById('dotsContainer');
+        if (container) {
+            const numberOfDots = 50;
+            const gridSize = 10;
+            const grid = Array(gridSize).fill().map(() => Array(gridSize).fill(false));
+            const cellWidth = window.innerWidth / gridSize;
+            const cellHeight = window.innerHeight / gridSize;
+
+            for (let i = 0; i < numberOfDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'text-dot';
+                dot.textContent = 'TOOLS';
+                const size = Math.random() * 1.5 + 0.5;
+                dot.style.fontSize = `${size}rem`;
+                
+                let cellX, cellY;
+                do {
+                    cellX = Math.floor(Math.random() * gridSize);
+                    cellY = Math.floor(Math.random() * gridSize);
+                } while (grid[cellX][cellY]);
+                
+                grid[cellX][cellY] = true;
+
+                const padding = 10;
+                const x = cellX * cellWidth + padding + Math.random() * (cellWidth - 2 * padding);
+                const y = cellY * cellHeight + padding + Math.random() * (cellHeight - 2 * padding);
+
+                dot.style.left = `${x}px`;
+                dot.style.top = `${y}px`;
+                
+                const dotClone = dot.cloneNode(true);
+                dotClone.style.top = `${y + window.innerHeight}px`;
+                
+                container.appendChild(dot);
+                container.appendChild(dotClone);
+            }
+        }
+    </script>
+</body>
+</html>

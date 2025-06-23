@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden; /* Allow vertical scroll for content */
+        }
+
+        body {
+            background: linear-gradient(-45deg, #1a1a40, #004466, #330033, #004422);
+            background-size: 400% 400%;
+            animation: bgMove 20s ease infinite;
+            position: relative;
+            color: #fff;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-dot {
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.05);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .dots-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200vh;
+            animation: floatDots 30s linear infinite;
+            z-index: -1; /* Ensure it is behind content */
+        }
+
+        @keyframes floatDots {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+
+        .content-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+            width: 800px;
+            z-index: 10;
+            margin: 40px auto; /* Centering the box */
+        }
+
+        .content-box h1 {
+            color: #222;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content-box p, .content-box ul {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .content-box ul {
+            list-style: disc inside;
+            padding-left: 20px;
+        }
+        .content-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .content-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #ddd;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+        }
+        footer a {
+            color: #aaeaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head> 
+<body> 
+    <div class="dots-container" id="dotsContainer"></div>
+
+    <div class="content-box">
+        <h1>Privacy Policy</h1> 
+        <p>We respect your privacy. This tool does not collect or store any personal data. All file processing is done locally in your browser and no files are uploaded to our servers.</p> 
+        <p>We use Google AdSense to serve ads. AdSense may use cookies to personalize ads based on your interests. You can learn more about how Google uses cookies by visiting <a href="https://policies.google.com/technologies/ads" target="_blank">this link</a>.</p> 
+        <p>By using this site, you agree to this policy.</p> 
+    </div>
+    
+    <footer> 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Use</a> | 
+        <a href="contact.html">Contact</a> |
+        <a href="index.html">Home</a>
+    </footer>
+
+    <script>
+        const container = document.getElementById('dotsContainer');
+        if (container) {
+            const numberOfDots = 50;
+            const gridSize = 10;
+            const grid = Array(gridSize).fill().map(() => Array(gridSize).fill(false));
+            const cellWidth = window.innerWidth / gridSize;
+            const cellHeight = window.innerHeight / gridSize;
+
+            for (let i = 0; i < numberOfDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'text-dot';
+                dot.textContent = 'TOOLS';
+                const size = Math.random() * 1.5 + 0.5;
+                dot.style.fontSize = `${size}rem`;
+                
+                let cellX, cellY;
+                do {
+                    cellX = Math.floor(Math.random() * gridSize);
+                    cellY = Math.floor(Math.random() * gridSize);
+                } while (grid[cellX][cellY]);
+                
+                grid[cellX][cellY] = true;
+
+                const padding = 10;
+                const x = cellX * cellWidth + padding + Math.random() * (cellWidth - 2 * padding);
+                const y = cellY * cellHeight + padding + Math.random() * (cellHeight - 2 * padding);
+
+                dot.style.left = `${x}px`;
+                dot.style.top = `${y}px`;
+                
+                const dotClone = dot.cloneNode(true);
+                dotClone.style.top = `${y + window.innerHeight}px`;
+                
+                container.appendChild(dot);
+                container.appendChild(dotClone);
+            }
+        }
+    </script>
+</body> 
+</html>
